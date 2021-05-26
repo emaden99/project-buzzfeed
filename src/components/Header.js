@@ -3,14 +3,13 @@ import {
   Collapse,
   Navbar,
   NavbarToggler,
-  NavbarBrand,
   Nav,
   NavItem,
   NavLink,
   UncontrolledDropdown,
   DropdownToggle,
   DropdownMenu,
-  DropdownItem } from 'reactstrap';
+  DropdownItem} from 'reactstrap';
 
 export default class Header extends React.Component {
   constructor(props) {
@@ -32,31 +31,36 @@ export default class Header extends React.Component {
         <Navbar color="light" light expand="md">
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
+            <Nav className="container-fluid"  navbar>
               <NavItem>
-                <NavLink href="/components/">Components</NavLink>
+                <NavLink href="/components/">Main Page</NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+              <NavItem> 
+                <NavLink href="https://github.com/reactstrap/reactstrap">Horoscope</NavLink>
               </NavItem>
               <UncontrolledDropdown nav inNavbar>
                 <DropdownToggle nav caret>
-                  Options
+                  Tests
                 </DropdownToggle>
                 <DropdownMenu right>
                   <DropdownItem>
-                    Option 1
+                    Which Cat Are You?
                   </DropdownItem>
                   <DropdownItem>
-                    Option 2
+                    Which HTML5 Element Are You?
                   </DropdownItem>
-                  <DropdownItem divider />
                   <DropdownItem>
-                    Reset
+                    Which Super Hero Are You?
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
-            </Nav>
+              <NavItem className="ml-auto" >
+                <NavLink href="/components/">Sign In</NavLink>
+              </NavItem>
+              <NavItem className="ml-auto"> 
+                <NavLink href="https://github.com/reactstrap/reactstrap">Sign Up</NavLink>
+              </NavItem>
+              </Nav>
           </Collapse>
         </Navbar>
       </div>

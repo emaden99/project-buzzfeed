@@ -1,16 +1,11 @@
 import React, { useState } from "react";
 import {
-  Col,
-  Button,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  UncontrolledAlert,
+  Card, CardText, CardBody, CardLink,
+  CardTitle, CardSubtitle,Form,UncontrolledAlert,FormGroup,Label,Input,Col,Button
 } from "reactstrap";
 import userData from './../../data/userData.json';
 import { useHistory } from "react-router-dom";
-
+import welcome from "./../../images/welcome-banner-colorful-confetti-paper-vector-illustration-90360583.jpeg";
 
 export const SignIn = () => {
   const history = useHistory();
@@ -33,13 +28,20 @@ export const SignIn = () => {
   }
 
   return (
-    <Form>
+    <div>
+    <Card fluid className="col-xs-8 col-sm-8 col-lg-4" style={{margin:"2rem"}}>
+      <CardBody>
+        <CardTitle tag="h1">Sign In</CardTitle>
+      </CardBody>
+      <img className="ms-2" width="25%" src={welcome} alt="welcome" />
+      <CardBody>
+      <Form>
       {error && <UncontrolledAlert color="danger" fade={true}>
         I am an alert and I can be dismissed without animating!
       </UncontrolledAlert>}
       <FormGroup row>
         <Label for="exampleEmail" sm={2}>
-          Email
+          Name:
         </Label>
         <Col sm={10}>
           <Input
@@ -48,13 +50,13 @@ export const SignIn = () => {
             type="email"
             name="email"
             id="exampleEmail"
-            placeholder="with a placeholder"
+            placeholder="Enter your username"
           />
         </Col>
       </FormGroup>
       <FormGroup row>
         <Label for="examplePassword" sm={2}>
-          Password
+          Password:
         </Label>
         <Col sm={10}>
           <Input
@@ -63,7 +65,7 @@ export const SignIn = () => {
             type="password"
             name="password"
             id="examplePassword"
-            placeholder="password placeholder"
+            placeholder="Enter your password"
           />
         </Col>
       </FormGroup>
@@ -74,5 +76,11 @@ export const SignIn = () => {
         </Col>
       </FormGroup>
     </Form>
+      </CardBody>
+    </Card>
+  </div>
+
+
+    
   );
 };
